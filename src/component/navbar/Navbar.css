@@ -1,0 +1,18 @@
+.navbar{
+    box-shadow: 10px 10px 10px #ccc;
+}
+.navbar-brand{
+    text-shadow:5px 8px 3px #ccc;
+}
+.nav-item{
+    text-shadow:5px 8px 3px #ccc;
+
+}
+.btn{
+    box-shadow: 10px 10px 15px 5px #ccc,inset 10px 10px 20px #ccc;
+
+}
+.btn:hover{
+    box-shadow:inset 10px 10px 20px rgb(3, 70, 17);
+    
+}
