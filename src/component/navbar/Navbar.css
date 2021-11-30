@@ -3,16 +3,20 @@
 }
 .navbar-brand{
     text-shadow:5px 8px 3px #ccc;
+    list-style: none;
+    font-weight: 700;
+    font-style: oblique;
 }
 .nav-item{
     text-shadow:5px 8px 3px #ccc;
-
+    font-weight: 600;
 }
-.btn{
+.btnNav{
     box-shadow: 10px 10px 15px 5px #ccc,inset 10px 10px 20px #ccc;
 
 }
-.btn:hover{
+.btnNav:hover{
     box-shadow:inset 10px 10px 20px rgb(3, 70, 17);
+    background-color: rgb(98, 255, 98);
     
 }

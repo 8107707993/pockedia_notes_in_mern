@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <li className="navbar-brand" >
           Pockedia Notes
-        </a>
+        </li>
         <button
           className="navbar-toggler"
           type="button"
@@ -36,7 +36,7 @@ const Navbar = () => {
             </li>
           </ul>
           <li className="d-flex">
-             <Link to="/" className="btn btn-outline-success" type="submit">
+             <Link to="/" className="btn btn-outline-success btnNav" type="submit">
               Login
             </Link>
           </li>
