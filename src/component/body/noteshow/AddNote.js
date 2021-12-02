@@ -1,5 +1,5 @@
 import React from "react";
-import './Body.css'
+import '../Body.css'
 
 const AddNote = () => {
   return (
@@ -37,7 +37,7 @@ const AddNote = () => {
           rows="3"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-success btnAddNote">AddNote</button>
+      <button type="submit" className="btn  btnAddNote">AddNote</button>
     </div>
   );
 };

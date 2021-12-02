@@ -1,29 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gwendolyn:wght@700&family=Lobster&family=Lobster+Two:ital,wght@1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,900;1,100;1,200;1,500;1,900&family=Praise&family=Roboto:wght@100;500;900&family=Zen+Antique&display=swap");
+
 /* AddNote Css Start */
 .btnAddNote {
-  box-shadow: 10px 10px 10px #ccc;
+  box-shadow: 10px 10px 10px rgb(192, 187, 187),inset 10px 10px 10px rgba(156, 155, 252, 0.486);
+  background-color: rgba(2, 5, 43, 0.801);
+  border: 1px solid #fff;
+  color: #fff;
 }
-.Formcontainer{
+.btnAddNote:hover{
+  box-shadow: 20px 20px 10px rgb(192, 187, 187),inset 10px 10px 10px rgb(42, 212, 255);
+  background-color: rgba(19, 117, 141, 0.801);
+  border: 1px solid #fff;
+  color: #fff;
+}
+.Formcontainer {
   margin-top: 20px;
   font-weight: 500;
 }
-.text{
+.text {
   text-shadow: 2px 10px 4px #ccc;
+  color: #888f99;
+  font-family: "Merriweather", serif;
+  font-weight: 800;
 }
 .form-control {
   box-shadow: 10px 15px 10px #ccc, inset 5px 5px 30px 1px #ccc,
     inset -5px -5px 5px 1px #ccc;
-    border: 1px solid #fff;
- 
+  border: 1px solid #fff;
 }
-.form-control:focus{
+.form-control:focus {
   box-shadow: 10px 15px 10px #ccc, inset 5px 5px 30px 1px #ccc,
     inset -5px -5px 5px 1px #ccc;
-    border: 1px solid #fff;  
-    
+  border: 1px solid #fff;
 }
-
-
-
 
 /* AddNote Css End */
 
+/* NoteItem Css Start  */
+
+.card{
+  position: relative;
+  width: 25vw;
+  height:300px ;
+  margin: 5px 5px ;
+  box-shadow: 10px 10px 20px #ccc,inset 10px 10px 10px #ccc,inset -10px -10px 10px #ccc;
+  border-top: 2px solid rgb(173, 173, 177);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-left: 2px solid rgb(173, 173, 177);
+  border-radius: 25px 30px 10px 10px;
+}
+
+.card .card-body{
+  padding-top: 20px;
+}
+
+.card .card-title{
+  font-family: 'Zen Antique', serif;
+  font-weight: 700;
+}
+
+.card .card-subtitle{
+  font-family: 'Roboto', sans-serif;
+}
+.card .card-body .linkGroup{
+  bottom: 20px;
+  position: absolute;
+}
+.card .card-body .linkGroup .bi{
+  margin-left:5px;
+  margin-right:20px;
+  cursor: pointer;
+}
+
+.card .card-body .linkGroup .bi-pencil-square:hover{
+  fill: rgb(27, 255, 7);
+}
+
+.card .card-body .linkGroup .bi-trash:hover{
+  fill: rgb(226, 0, 0);
+}
+
+.card .card-body .linkGroup .readMore{
+  color: #000;
+  text-decoration: none;
+
+}
+
+.card .card-body .linkGroup .readMore:hover{
+  color: #888f99;
+}
+
+.card .card-body .card-footer{
+  position: absolute;
+  bottom: 50px;
+  margin-bottom: 10px;
+
+}
+
+@media  screen and (max-width: 576px) {
+ .card{
+   width: 75vw;
+ } 
+}
+
+@media  screen and (max-width: 360px) {
+  .card{
+    width: 75vw;
+  } 
+ }
+
+@media  screen and (min-width: 768px) {
+  .card{
+    width: 40vw;
+    margin: 10px 10px;
+  } 
+ }
+ 
+@media  screen and (min-width: 1024px) {
+  .card{
+    width: 25vw;
+  } 
+ }

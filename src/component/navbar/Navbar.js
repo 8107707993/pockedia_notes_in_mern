@@ -6,7 +6,7 @@ const Navbar = () => {
   let location = useLocation();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <li className="navbar-brand" >
           Pockedia Notes
