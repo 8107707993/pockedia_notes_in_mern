@@ -5,7 +5,7 @@ const mongoUrl = "mongodb://localhost:27017/pockediaBook?readPreference=primary&
 
 const connectToMongodb = () => {
     mongoose.connect(mongoUrl, ()=>{
-        console.log("Connected to Mongo SuccessFuly");
+        console.log("Connected to MongoDb SuccessFuly");
     })
 }
 

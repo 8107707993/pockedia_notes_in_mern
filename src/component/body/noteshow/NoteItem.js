@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import NoteContext from "../../../context/notes/noteContext";
 import '../Body.css';
 
-const NoteItem = ({ note }) => {
+const NoteItem = ({ note, updateModal }) => {
+  const context = useContext(NoteContext);
+  const {deleteNote}= context;
+
+  
   return (
     <div>
       <div className="card my-4">
@@ -10,7 +15,7 @@ const NoteItem = ({ note }) => {
           <h5 className="card-title">Title:- {note.title}</h5>
           <h6 className="card-subtitle mb-2 text-muted">Tag:- {note.tag}</h6>
           <p className="card-text">
-            {note.description}
+            {note.description.slice(0,97)}...
           </p>
           <div className="card-footer text-muted">{note.date.slice(0,10)}</div>
           <div className="linkGroup">
@@ -22,6 +27,7 @@ const NoteItem = ({ note }) => {
                 fill="#000"
                 className="bi bi-pencil-square"
                 viewBox="0 0 16 16"
+                onClick={()=>{updateModal(note)}}
               >
                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                 <path
@@ -36,6 +42,7 @@ const NoteItem = ({ note }) => {
                 fill="#000"
                 className="bi bi-trash"
                 viewBox="0 0 16 16"
+                onClick={()=>{deleteNote(note._id)}}
               >
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                 <path

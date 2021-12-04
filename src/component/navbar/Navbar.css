@@ -6,10 +6,12 @@
     list-style: none;
     font-weight: 700;
     font-style: oblique;
+    font-family: 'Berkshire Swash', cursive;
 }
 .nav-item{
     text-shadow:5px 8px 3px #ccc;
     font-weight: 600;
+    font-family: 'Bungee Hairline', cursive;
 }
 .btnNav{
     box-shadow: 10px 10px 15px 5px #ccc,inset 10px 10px 20px #ccc;

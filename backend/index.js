@@ -1,11 +1,13 @@
-const express = require('express')
+const express = require('express');
 const connectToMongodb = require('./db');
+const cors = require('cors');
 
 connectToMongodb();
 
 const app = express()
 const port = 4000
 
+app.use(cors())
 app.use(express.json())
 
 // Available Routes 
