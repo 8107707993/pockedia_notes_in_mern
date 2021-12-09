@@ -1,5 +1,6 @@
 .navbar{
     box-shadow: 10px 10px 10px #ccc;
+    z-index: 99;
 }
 .navbar-brand{
     text-shadow:5px 8px 3px #ccc;
@@ -14,6 +15,7 @@
     font-family: 'Bungee Hairline', cursive;
 }
 .btnNav{
+    font-family: 'Bungee Hairline', cursive;
     box-shadow: 10px 10px 15px 5px #ccc,inset 10px 10px 20px #ccc;
 
 }

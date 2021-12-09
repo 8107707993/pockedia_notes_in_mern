@@ -7,6 +7,8 @@
   background-color: rgba(2, 5, 43, 0.801);
   border: 1px solid #fff;
   color: #fff;
+  font-size: 14px;
+  padding: 12px;
 }
 .btnAddNote:hover {
   box-shadow: 20px 20px 10px rgb(192, 187, 187),
@@ -22,7 +24,7 @@
 .text {
   text-shadow: 2px 10px 4px #ccc;
   color: #888f99;
-  font-family: "Merriweather", serif;
+  font-family: 'Bungee Hairline', cursive;
   font-weight: 800;
 }
 .form-control {
@@ -45,7 +47,7 @@
   width: 25vw;
   height: 300px;
   margin: 5px 5px;
-  box-shadow: 10px 10px 20px #ccc, inset 10px 10px 10px #ccc,
+  box-shadow: 0px 0px 20px rgb(134, 133, 133), inset 10px 10px 10px #ccc,
     inset -10px -10px 10px #ccc;
   border-top: 2px solid rgb(173, 173, 177);
   border-bottom: 2px solid #fff;
@@ -61,8 +63,8 @@
 }
 
 .card .card-title {
-  font-family: "Zen Antique", serif;
-  font-weight: 700;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 500;
 }
 
 .card .card-subtitle {
@@ -137,8 +139,8 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(219, 230, 235);
-  border-radius: 35% 35% 0px 0px;
-  padding-top: 120px;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px;
   box-shadow: 20px 20px 20px #888f99, -2px -2px 10px #888f99;
   position: relative;
   border-top: 2px solid rgb(255, 255, 255);

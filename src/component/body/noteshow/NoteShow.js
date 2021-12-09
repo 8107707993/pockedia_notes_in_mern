@@ -1,20 +1,26 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NoteContext from "../../../context/notes/noteContext";
 import NoteItem from "./NoteItem";
 
-const NotesShow = () => {
+const NotesShow = (props) => {
   const contex = useContext(NoteContext);
   const { notes, getAllNotes, editNote} = contex;
   const ref = useRef(null);
   const refClose = useRef(null);
+  let history = useNavigate();
   
-  console.log(notes);
   const [note, setNote] = useState({id:"", edittitle: "", editdescription:"", edittag:""});
 
   useEffect(() => {
-    getAllNotes();
+    if (localStorage.getItem('authToken')) {
+      getAllNotes();
+      
+    } else {
+      history('/login')
+    }
     // eslint-disable-next-line 
-  }, []);
+  }, [getAllNotes]);
   
   const updateModal = (currentnote) => {
     ref.current.click();
@@ -26,6 +32,8 @@ const NotesShow = () => {
     console.log(note.id)
     editNote(note.id , note.edittitle, note.editdescription, note.edittag)
     refClose.current.click();
+    props.showAlert("Note Updated Successfully", "success");
+
   
   }
 
@@ -143,9 +151,10 @@ const NotesShow = () => {
           </div>
         </div>
       </div>
+      <div style={{marginTop:"0px"}}>{notes.length === 0 && "You Do Not Have Any Note Please Add Some Note.."}</div>
       {notes[0] &&
         notes[0].map((note) => (
-          <NoteItem key={note._id} updateModal={updateModal} note={note} />
+          <NoteItem showAlert={props.showAlert} key={note._id} updateModal={updateModal} note={note} />
         ))}
     </div>
   );

@@ -19,15 +19,17 @@ router.post(
     }),
   ],
   async (req, res) => {
+    let success= false;
+
     // if there are error return Bad request
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({success, errors: errors.array() });
     }
 
     try {
       // Check whether the user with this email exists already\
-      let user = await User.findOne({ email: req.body.email });
+      let user = await User.findOne({success, email: req.body.email });
       if (user) {
         return res
           .status(400)
@@ -49,7 +51,8 @@ router.post(
       };
       //generating Authentication Token
       const authtoken = jwt.sign(data, adminSign);
-      res.json({ authtoken });
+      success= true;
+      res.json({success, authtoken });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error occured");
@@ -65,10 +68,13 @@ router.post(
     body("password", "Password cannot be blank").exists(),
   ],
   async (req, res) => {
+
+    let success= false;
+    
     // if there are error return Bad request
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({success, errors: errors.array() });
     }
 
     const { email, password } = req.body;
@@ -77,15 +83,16 @@ router.post(
       if (!user) {
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credentials !" });
+          .json({ success, error: "Please try to login with correct credentials !" });
       }
 
       // Compare password with database
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
+        success= false;
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credentials !" });
+          .json({success, error: "Please try to login with correct credentials !" });
       }
 
       // Sending payload to user
@@ -96,7 +103,8 @@ router.post(
       };
       //generating Authentication Token
       const authtoken = jwt.sign(payload, adminSign);
-      res.json({ authtoken });
+      success = true
+      res.json({success, authtoken });
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error occured");

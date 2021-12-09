@@ -3,17 +3,21 @@ import { Link } from "react-router-dom";
 import NoteContext from "../../../context/notes/noteContext";
 import '../Body.css';
 
-const NoteItem = ({ note, updateModal }) => {
+const NoteItem = ({showAlert, note, updateModal }) => {
   const context = useContext(NoteContext);
   const {deleteNote}= context;
 
-  
+  const deletingNote = ()=>{
+    deleteNote(note._id)
+    showAlert("Note Deleted Successfully", "info");
+
+  }
   return (
     <div>
       <div className="card my-4">
         <div className="card-body">
-          <h5 className="card-title">Title:- {note.title}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">Tag:- {note.tag}</h6>
+          <h5 className="card-title"> {note.title.slice(0,20)}</h5>
+          <h6 className="card-subtitle mb-2 text-muted">{note.tag}</h6>
           <p className="card-text">
             {note.description.slice(0,97)}...
           </p>
@@ -42,7 +46,7 @@ const NoteItem = ({ note, updateModal }) => {
                 fill="#000"
                 className="bi bi-trash"
                 viewBox="0 0 16 16"
-                onClick={()=>{deleteNote(note._id)}}
+                onClick={deletingNote}
               >
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                 <path
