@@ -53,7 +53,7 @@ const Navbar = () => {
             </li>
           </ul>
           {!localStorage.getItem("authToken") ? (
-            <li className="d-flex">
+            <li className="d-flex mx-2">
               <Link
                 to="/login"
                 className="btn btn-outline-success btnNav"
@@ -63,16 +63,17 @@ const Navbar = () => {
               </Link>
             </li>
           ) : (
-            <li className="d-flex">
-              <Link
+            <li className="d-flex mx-2">
+              <button
                 onClick={hendeleLogout}
                 className="btn btn-outline-success btnNav"
                 type="submit"
               >
                 LogOut
-              </Link>
+              </button>
             </li>
           )}
+          {location.pathname==="/login" && <Link to={"/signup"} className="btn btnNav btn-outline-success" >Sign Up</Link> }
         </div>
       </div>
     </nav>
